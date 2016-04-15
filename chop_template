@@ -1,0 +1,14 @@
+"""
+Binary search for CodeKata 2
+
+http://codekata.com/kata/kata02-karate-chop/
+
+Unit tests from Dave Thomas in that article.
+"""
+
+
+def binary_search(value, seq):
+    """Return the position of the value in the sequence, or -1 if not in
+    sequence. Assumes the seq is already in order.
+    """
+    pass
