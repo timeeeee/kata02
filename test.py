@@ -1,7 +1,7 @@
 from unittest import TestCase
 from random import sample, randint
 
-import chop1
+import chop1, chop2
 
 class binary_search_mixin(object):
     def test_base_cases(self):
@@ -51,3 +51,8 @@ class binary_search_mixin(object):
 class Chop1Tests(TestCase, binary_search_mixin):
     def search(self, value, seq):
         return chop1.binary_search(value, seq)
+
+
+class Chop2Tests(TestCase, binary_search_mixin):
+    def search(self, value, seq):
+        return chop2.binary_search(value, seq)
