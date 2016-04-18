@@ -3,6 +3,7 @@ from random import sample, randint
 
 import chop1
 import chop2
+import chop3
 
 
 class BinarySearchMixin(object):
@@ -62,3 +63,8 @@ class Chop1Tests(TestCase, BinarySearchMixin):
 class Chop2Tests(TestCase, BinarySearchMixin):
     def search(self, value, seq):
         return chop2.binary_search(value, seq)
+
+
+class Chop3Tests(TestCase, BinarySearchMixin):
+    def search(self, value, seq):
+        return chop3.binary_search(value, seq)
