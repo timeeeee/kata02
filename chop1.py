@@ -4,6 +4,9 @@ Binary search for CodeKata 2
 http://codekata.com/kata/kata02-karate-chop/
 
 Unit tests from Dave Thomas in that article.
+
+This implementation is recursive, passing a slice of the list in the next
+function call.
 """
 
 
