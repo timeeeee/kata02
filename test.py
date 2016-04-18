@@ -1,9 +1,15 @@
 from unittest import TestCase
 from random import sample, randint
 
-import chop1, chop2
+import chop1
+import chop2
 
-class binary_search_mixin(object):
+
+class BinarySearchMixin(object):
+    """Tests binary search functions. To use, make a class inheriting from this
+    class and from unittest.TestCase with a method "search" that performs a
+    binary search.
+    """
     def test_base_cases(self):
         """Test binary search base cases"""
         self.assertEqual(self.search(3, []), -1)
@@ -48,11 +54,11 @@ class binary_search_mixin(object):
                     self.assertEqual(self.search(x, l), -1)
 
 
-class Chop1Tests(TestCase, binary_search_mixin):
+class Chop1Tests(TestCase, BinarySearchMixin):
     def search(self, value, seq):
         return chop1.binary_search(value, seq)
 
 
-class Chop2Tests(TestCase, binary_search_mixin):
+class Chop2Tests(TestCase, BinarySearchMixin):
     def search(self, value, seq):
         return chop2.binary_search(value, seq)
