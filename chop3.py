@@ -16,12 +16,17 @@ def binary_search(value, seq):
     """
     start = 0
     end = len(seq)
+
+    # Split window in half until there is at most one element left.
     while end - start > 1:
         center = (end + start) / 2
         if value < seq[center]:
+            # Value is in first half
             end = center
         else:
+            # Value is in second half
             start = center
+
     if start == end or seq[start] != value:
         return -1
     else:
