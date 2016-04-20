@@ -16,8 +16,12 @@ def binary_search(value, seq):
     tree = BinaryTree(seq)
     try:
         return tree.find(value)
-    except ValueError:
+    except BinaryTreeValueError:
         return -1
+
+
+class BinaryTreeValueError(ValueError):
+    pass
 
 
 class BinaryTree(object):
@@ -39,7 +43,7 @@ class BinaryTree(object):
     def find(self, value):
         """Find index of value in list of all values in order"""
         if self.value is None:
-            raise ValueError("Value {} not in tree")
+            raise BinaryTreeValueError("Value {} not in tree")
 
         if self.value == value:
             return self.left_length
